@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::post('/', 'ParserController@parse');
+
+Route::get('/v', function() {
+  return view('parser.vue');
+});
