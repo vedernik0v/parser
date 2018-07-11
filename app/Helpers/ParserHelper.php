@@ -66,7 +66,7 @@ class ParserHelper
      */
     public function getAttrValueListFromString(string $string='')
     {
-        $pattern = '#\w+="\w+"#i';
+        $pattern = '#[\w-]+="[\w-]+"#i';
         preg_match_all($pattern, $string, $matches);
         return $matches[0];
     }
@@ -178,7 +178,7 @@ class ParserHelper
             }
         }
         $attrPrefix=implode('|', $attributes);
-        $pattern = "/($attrPrefix)\w+( ($attrPrefix)\w+)*/";
+        $pattern = "/($attrPrefix)[\w-]+( ($attrPrefix)[\w-]+)*/i";
         return $pattern;
     }
 

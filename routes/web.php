@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('parser');
-});
+Route::get('/', 'ParserController@index');
 
 Route::post('/', 'ParserController@parse');
 
