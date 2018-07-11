@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ParserHelper;
-use App\Http\Requests;
+use App\Http\Requests\ParserParse;
 use Illuminate\Http\Request;
 
 class ParserController extends Controller
@@ -45,13 +45,13 @@ class ParserController extends Controller
     public function index(Request $request)
     {
         $this->getViewDataFromFlash();
-        return view('parser', $this->viewData);
+        return view('parser.index', $this->viewData);
     }
 
     /**
      * Процесс парсинга
      */
-    public function parse(\App\Http\Requests\ParserParse $request)
+    public function parse(ParserParse $request)
     {
         $_s   = $request->s;
         $_url = $this->parserHelper->getUrlFromString($_s);
@@ -67,7 +67,7 @@ class ParserController extends Controller
 
         $this->flashViewData($request);
 
-        return view('parser', $this->viewData);
+        return view('parser.index', $this->viewData);
     }
 
     /**

@@ -12,9 +12,9 @@
 */
 
 Route::get('/', 'ParserController@index');
+Route::get('/v', function(){
+  return view('parser.index-vue');
+});
 
 Route::post('/', 'ParserController@parse');
 
-Route::get('/v', function() {
-  return view('parser.vue');
-});
