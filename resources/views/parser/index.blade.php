@@ -1,7 +1,7 @@
 @extends('layouts.parser')
 
 @section('content')
-
+<div class="content">
   <div class="title m-b-md">
     <form action="/" method="POST">
       {{ csrf_field() }}
@@ -26,4 +26,5 @@
     </div>
     {{ $content }}
   @endisset
+</div>
 @endsection

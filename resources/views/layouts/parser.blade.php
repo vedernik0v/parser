@@ -22,10 +22,8 @@
   </style>
 </head>
 <body>
-  <div class="flex-center position-ref full-height">
-    <div class="content" id="app">
+  <div class="flex-center position-ref full-height" id="app">
     @yield('content')
-    </div>
   </div>
 
 @yield('js')
